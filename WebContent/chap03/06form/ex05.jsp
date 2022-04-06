@@ -8,16 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-String name = request.getParameter("name");
-String greeting = "";
-if (name == null) {
-	greeting = "손님, 이름을 입력해주세요";
-} else {
-	greeting = name + "님 반갑습니다";
-}
-%>
+<h1>type="number", type="email, type="file"</h1>
 
-<h1><%= greeting %></h1>
+<form action="ex05.jsp">
+	<input type="number"  name="num"/><br />
+	<input type="email"	 name="email" /><br />
+	<input type="file" nmae="file" /><br />
+	<input type="submit" />
+	</form>
 </body>
 </html>

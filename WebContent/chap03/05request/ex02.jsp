@@ -1,17 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h1>¿äÃ»ÆÄ¶ó¹ÌÅÍ (request paramter)</h1>
+<h1>ìš”ì²­íŒŒë¼ë¯¸í„° (request paramter)</h1>
 <h3>?name=donald&age=30</h3>
 
-<h3>name ÆÄ¶ó¹ÌÅÍ : <%= request.getParameter("name") %></h3>
-<h3>age ÆÄ¶ó¹ÌÅÍ : <%= request.getParameter("age") %></h3>
+<h3>name íŒŒë¼ë¯¸í„° : <%= request.getParameter("name") %></h3>
+<h3>age íŒŒë¼ë¯¸í„° : <%= request.getParameter("age") %></h3>
 </body>
 </html>

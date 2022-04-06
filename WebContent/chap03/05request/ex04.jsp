@@ -1,18 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<!-- dan ¿äÃ» ÆÄ¶ó¹ÌÅÍ °ª¿¡ µû¶ó ±¸±¸´Ü Ãâ·ÂµÇµµ·Ï ÀÛ¼º -->
+<!-- dan ìš”ì²­ íŒŒë¼ë¯¸í„° ê°’ì— ë”°ë¼ êµ¬êµ¬ë‹¨ ì¶œë ¥ë˜ë„ë¡ ìž‘ì„± -->
 <!-- http://localhost:8080/jsp20220405/chap03/05request/ex04.jsp?dan=2 -->
-<!-- 2´Ü Ãâ·Â -->
+<!-- 2ë‹¨ ì¶œë ¥ -->
 
 <!-- http://localhost:8080/jsp20220405/chap03/05request/ex04.jsp?dan=5 -->
-<!-- 5´Ü Ãâ·Â -->
+<!-- 5ë‹¨ ì¶œë ¥ -->
+
+<%
+String danStr = request.getParameter("dan");
+
+if (danStr == null) {
+%>
+	<h1>ë‹¨ ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”</h1>
+<%	
+} else {
+	int dan = Integer.parseInt(danStr);
+	
+	for (int i = 1; i <= 9; i++) {
+%>
+		<h3><%= dan %> X <%= i %> = <%= dan * i %></h3>
+<%	
+	}
+}
+
+%>
 </body>
 </html>
