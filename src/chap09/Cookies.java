@@ -11,9 +11,10 @@ public class Cookies {
 
 	public Cookies(HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
+		
 		if (cookies != null) {
 			for (int i = 0; i < cookies.length; i++) {
-				cookieMap.put(cookies[i], getName(), cookies[i]);
+				cookieMap.put(cookies[i].getName(), cookies[i]);
 			}
 		}
 	}

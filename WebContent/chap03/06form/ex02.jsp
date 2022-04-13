@@ -9,5 +9,9 @@
 </head>
 <body>
 	<h1>ex02 jsp</h1>
+	<form action="">
+	<input type="text"  name="age"/>
+	<input type="submit"  value="전송"/>
+	</form>
 </body>
 </html>
