@@ -3,3 +3,4 @@
 .settings/
 WebContent/META-INF/MANIFEST.MF
 .project
+*.jar
