@@ -6,14 +6,16 @@ public class Car {
 	private String model;
 	private int price;
 	private boolean available;
+	private String carNum;
 	private List<String> owners;
 	public Car() {
 		
 	}
 	
-	public Car(String model, int price) {
+	public Car(String model, int price ) {
 		this.model = model;
 		this.price = price;
+		
 	}
 	
 	public List<String> getOwners() {
@@ -46,5 +48,14 @@ public class Car {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
+	public String getCarNum() {
+		return carNum;
+	}
+
+	public void setCarNum(String carNum) {
+		this.carNum = carNum;
+	}
+	
 
 }
