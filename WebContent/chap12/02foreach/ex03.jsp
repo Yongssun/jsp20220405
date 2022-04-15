@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import = "java.util.*" %>
 <%@ page import="chap09.*" %>
 <%request.setCharacterEncoding("utf-8"); %>
@@ -12,12 +13,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>삼항 연산자</h1>
-	<h1> 1항 ? 2항 : 3항</h1>
-	<h1>연산결과는 2항또는 3항</h1>
-	<h1>1항이 true이면 2항이 연산결과</h1>
-	<h1>1항이 false이면 3항이 연산결과</h1>
+<form>
+		구구단 <input type="number" name="dan" /> 단
+		<input type="submit" value="출력" />
+	</form>
 	
-	<p>${ (3 > 5) ? "hello" : "spring" }</p>	
+	<%-- 입력단 dan 파라미터 사용해서 구구단 출력 --%>
+	<%-- dan 이 2 ~ 9 아니면 "적절한 단을 입력해주세요" 출력 --%>
+	
+	<c:choose>
+		<c:when test="${param.dan >= 2 and param.dan <=9 }">
+			<c:forEach begin="1" end="9" var="i">
+				<p>${param.dan } X ${i } = ${param.dan * i }</p>
+			</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<p class="text-warning">적절한 단을 입력해주세요</p>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>

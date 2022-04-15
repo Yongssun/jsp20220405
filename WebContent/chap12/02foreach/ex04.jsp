@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import = "java.util.*" %>
 <%@ page import="chap09.*" %>
 <%request.setCharacterEncoding("utf-8"); %>
@@ -12,12 +13,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>삼항 연산자</h1>
-	<h1> 1항 ? 2항 : 3항</h1>
-	<h1>연산결과는 2항또는 3항</h1>
-	<h1>1항이 true이면 2항이 연산결과</h1>
-	<h1>1항이 false이면 3항이 연산결과</h1>
+<h1>forEach</h1>
 	
-	<p>${ (3 > 5) ? "hello" : "spring" }</p>	
+	<c:forEach begin="1" end="10" step="2" var="i">
+		<p>hello : ${i }</p>
+	</c:forEach>
 </body>
 </html>

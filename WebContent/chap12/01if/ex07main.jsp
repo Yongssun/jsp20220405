@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import = "java.util.*" %>
 <%@ page import="chap09.*" %>
 <%request.setCharacterEncoding("utf-8"); %>
@@ -12,12 +13,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>삼항 연산자</h1>
-	<h1> 1항 ? 2항 : 3항</h1>
-	<h1>연산결과는 2항또는 3항</h1>
-	<h1>1항이 true이면 2항이 연산결과</h1>
-	<h1>1항이 false이면 3항이 연산결과</h1>
-	
-	<p>${ (3 > 5) ? "hello" : "spring" }</p>	
+<h1>메인콘텐츠</h1>
+
+<c:if test="${not empty sessionScope.username }" var="logedIn">
+<h2>${sessionScope.usename }님 반갑습니다</h2>
+<h2>멤버를 위한콘텐츠</h2>
+<h3><a href="ex08logout.jsp">로그아웃</a></h3>
+ </c:if>
+ 
+ <c:if test="${not logedIn }">
+ <h2>게스트를 위한 콘텐츠</h2>
+ <h3><a href="ex05loginForm.jsp">로그인</a></h3>
+ 
+ </c:if>
 </body>
 </html>

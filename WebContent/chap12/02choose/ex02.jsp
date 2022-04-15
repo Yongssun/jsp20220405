@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import = "java.util.*" %>
 <%@ page import="chap09.*" %>
 <%request.setCharacterEncoding("utf-8"); %>
@@ -12,12 +13,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>삼항 연산자</h1>
-	<h1> 1항 ? 2항 : 3항</h1>
-	<h1>연산결과는 2항또는 3항</h1>
-	<h1>1항이 true이면 2항이 연산결과</h1>
-	<h1>1항이 false이면 3항이 연산결과</h1>
+	<h1>나이별 추천 영화</h1>
 	
-	<p>${ (3 > 5) ? "hello" : "spring" }</p>	
+	<form>
+		나이 : <input type="number" name="age" id="" />
+		
+		<input type="submit" value="영화 추천받기" />
+	</form>	
+	
+	<%-- 코드 작성 --%>
+	<%-- 20세이상이면 "데드풀" --%>
+	<%-- 12세이상이면 "어벤져스" --%>
+	<%-- 4세이상이면 "토이스토리" --%>
+	<%-- 나머지는 "적절한 나이를 입력해주세요" --%>
+	
+	<c:choose>
+		<c:when test="${param.age >= 20 }">
+			<h1>데드풀 추천</h1>
+		</c:when>
+		<c:when test="${param.age >= 12 }">
+			<h1>어벤져스 추천</h1>
+		</c:when>
+		<c:when test="${param.age >= 4 }">
+			<h1>토이스토리 추천</h1>
+		</c:when>
+		<c:otherwise>
+			<h1 class="text-warning">적절한 나이를 입력해주세요.</h1>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>
