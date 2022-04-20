@@ -1,4 +1,4 @@
-package chap17.servlet4;
+package chap19.servlet5;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class S4Servlet02a
+ * Servlet implementation class S5Servlet02
  */
-//@WebServlet("/S4Servlet02a")
-public class S4Servlet02a extends HttpServlet {
+@WebServlet("/s5/servlet02")
+public class S5Servlet02 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public S4Servlet02a() {
+    public S5Servlet02() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +27,7 @@ public class S4Servlet02a extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().print("s4servlet02 execute.....");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -35,7 +35,13 @@ public class S4Servlet02a extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String nickName= request.getParameter("nickName");
+		String song= request.getParameter("song");
+		
+		System.out.println(nickName);
+		System.out.println(song);
+		
+		
 	}
 
 }
