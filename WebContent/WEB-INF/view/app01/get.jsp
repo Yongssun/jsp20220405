@@ -35,8 +35,11 @@
 						<label for="input2" class="form-label">작성일시</label>
 						<input class="form-control" type="datetime-local" value="${board.inserted }" readonly/>
 					</div> 
+						<a href="http://localhost:11807/jspMy/board/list">리스트</a>
+						<a href="http://localhost:11807/jspMy/board/insert">글 작성</a>
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>

@@ -47,6 +47,7 @@
 						</c:forEach>
 					</tbody>
 				</table>
+					<a href="http://localhost:11807/jspMy/board/insert">글 작성</a>
 			</div>
 		</div>
 	</div>

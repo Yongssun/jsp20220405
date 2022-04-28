@@ -28,10 +28,14 @@
 					<label class="form-label" for="textarea1">본문</label>
 					<textarea class="form-control" name="body" id="textarea1" cols="30" rows="10"></textarea>
 				</div>
-				<button class="btn btn-primary"> 작성</button>
+				<button class="btn btn-primary" > 작성</button>
 				</form>
+			<a href="http://localhost:11807/jspMy/board/list">리스트</a>
+			
 			</div>
 		</div>
 	</div>
+	
+	
 </body>
 </html>
