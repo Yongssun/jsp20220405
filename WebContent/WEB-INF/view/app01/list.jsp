@@ -14,25 +14,41 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>새 직원 등록</h1>
-	
-	<c:if test="${not empty param.success }">
-		<c:if test="${param.success }" >
-			<p class="text-success">입력 성공</p>
-		</c:if>
-		
-		<c:if test="${not param.success }">
-			<p class="text-danger">입력 실패</p>
-		</c:if>
-	</c:if>
-	
-	<form method="post">
-		Last Name : <input type="text" name="lastName"/> <br />
-		First Name : <input type="text" name="firstName" /> <br />
-		Birth Date : <input type="date" name="birthDate"/> <br />
-		Picture : <input type="text" name="pic" value="pic01" /> <br />
-		Notes : <textarea name="notes"></textarea> <br />
-		<input type="submit" value="등록" />
-	</form>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>글 목록</h1>
+				
+				<!-- table.table>thead>tr>th*3^^tbody -->
+				<table class="table">
+					<thead>
+						<tr>
+							<th><i class="fa-solid fa-hashtag"></i></th>
+							<th>제목</th>
+							<th><i class="fa-solid fa-calendar"></i></th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${boardList }" var="board">
+							<tr>
+								<td>${board.id }</td>
+								<td>
+													
+									<c:url value="/board/get" var="getUrl">
+										<c:param name="id" value="${board.id }"></c:param>
+									</c:url>
+									
+									<a href="${getUrl }">
+										${board.title }
+									</a>
+								</td>
+								<td>${board.prettyInserted }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

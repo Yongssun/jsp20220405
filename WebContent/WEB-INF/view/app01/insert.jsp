@@ -14,25 +14,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>새 직원 등록</h1>
-	
-	<c:if test="${not empty param.success }">
-		<c:if test="${param.success }" >
-			<p class="text-success">입력 성공</p>
-		</c:if>
-		
-		<c:if test="${not param.success }">
-			<p class="text-danger">입력 실패</p>
-		</c:if>
-	</c:if>
-	
-	<form method="post">
-		Last Name : <input type="text" name="lastName"/> <br />
-		First Name : <input type="text" name="firstName" /> <br />
-		Birth Date : <input type="date" name="birthDate"/> <br />
-		Picture : <input type="text" name="pic" value="pic01" /> <br />
-		Notes : <textarea name="notes"></textarea> <br />
-		<input type="submit" value="등록" />
-	</form>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>글 작성</h1>
+				
+				<form action="${appRoot }/board/insert" method="post">
+					<div>
+						<label class="form-label" for="">제목</label>
+						<input class="form-control" type="text" name="title" required id="input1"/>
+					</div>
+				<div>
+					<label class="form-label" for="textarea1">본문</label>
+					<textarea class="form-control" name="body" id="textarea1" cols="30" rows="10"></textarea>
+				</div>
+				<button class="btn btn-primary"> 작성</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

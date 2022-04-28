@@ -14,25 +14,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>새 직원 등록</h1>
+	<h1>직원 조회</h1>
+	<div>
+		<form>
+			이름 검색 <input type="text" name="keyword" value="${param.keyword }"/> <button>찾기</button>
+		</form>
+	</div>
 	
-	<c:if test="${not empty param.success }">
-		<c:if test="${param.success }" >
-			<p class="text-success">입력 성공</p>
-		</c:if>
-		
-		<c:if test="${not param.success }">
-			<p class="text-danger">입력 실패</p>
-		</c:if>
-	</c:if>
-	
-	<form method="post">
-		Last Name : <input type="text" name="lastName"/> <br />
-		First Name : <input type="text" name="firstName" /> <br />
-		Birth Date : <input type="date" name="birthDate"/> <br />
-		Picture : <input type="text" name="pic" value="pic01" /> <br />
-		Notes : <textarea name="notes"></textarea> <br />
-		<input type="submit" value="등록" />
-	</form>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>LastName</th>
+				<th>FirstName</th>
+				<th>BirthDate</th>
+				<th>Photo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${employeeList }" var="emp">
+				<tr>
+					<td>${emp.id }</td>
+					<td>${emp.lastName }</td>
+					<td>${emp.firstName }</td>
+					<td>${emp.birthDate }</td>
+					<td>${emp.photo }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 </html>

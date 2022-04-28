@@ -14,25 +14,36 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>새 직원 등록</h1>
+	<h1>고객 목록</h1>
 	
-	<c:if test="${not empty param.success }">
-		<c:if test="${param.success }" >
-			<p class="text-success">입력 성공</p>
-		</c:if>
-		
-		<c:if test="${not param.success }">
-			<p class="text-danger">입력 실패</p>
-		</c:if>
-	</c:if>
+	<div>
+		<form>
+			이름 검색 <input type="text" name="keyword" value="${param.keyword }"/> 
+			<button><i class="fa-solid fa-magnifying-glass"></i></button>
+		</form>
+	</div>
 	
-	<form method="post">
-		Last Name : <input type="text" name="lastName"/> <br />
-		First Name : <input type="text" name="firstName" /> <br />
-		Birth Date : <input type="date" name="birthDate"/> <br />
-		Picture : <input type="text" name="pic" value="pic01" /> <br />
-		Notes : <textarea name="notes"></textarea> <br />
-		<input type="submit" value="등록" />
-	</form>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>CITY</th>
+				<th>COUNTRY</th>
+				<th>POSTCODE</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${customerList }" var="customer">
+				<tr>
+					<td>${customer.id }</td>
+					<td>${customer.name }</td>
+					<td>${customer.city }</td>
+					<td>${customer.country }</td>
+					<td>${customer.postCode }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 </html>
