@@ -6,3 +6,6 @@ WebContent/META-INF/MANIFEST.MF
 *.jar
 WebContent/chap19/ex02.jsp
 *.properties
+src/app01/BoardModifyServlet.java
+WebContent/WEB-INF/tags/app01/navBar.tag
+WebContent/chap20/NewFile.jsp
